@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Flex</string>
+    <string name="box_hint">Speak</string>
 </resources>

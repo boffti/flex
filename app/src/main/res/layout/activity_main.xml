@@ -8,12 +8,34 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    android:background="#4644aa"
     tools:context="com.nieit.project.flex.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+
+
+    <com.github.florent37.materialtextfield.MaterialTextField
+        android:layout_width="match_parent"
+        android:layout_gravity="center_horizontal"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="20dp"
+        app:mtf_image="@drawable/ic_volume_up_24dp"
+        >
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/box_hint"
+            android:textColor="#333"
+            android:textColorHint="@color/colorAccent"
+            android:textSize="15sp"
+            app:mtf_openKeyboardOnFocus="true"
+            app:mtf_labelColor="@android:color/holo_red_dark"
+            app:mtf_cardColor="@color/cardview_dark_background"/>
+
+    </com.github.florent37.materialtextfield.MaterialTextField>
 
     <io.saeid.fabloading.LoadingView
         android:id="@+id/loading_view"
@@ -22,9 +44,14 @@
         android:layout_weight="2"
         android:scaleX="2.5"
         android:scaleY="2.5"
-        app:mfl_onclickLoading="true"
+        android:padding="10dp"
+        app:mfl_onclickLoading="false"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        app:mfl_duration="800"
+        app:mfl_repeat="100"
+        android:onClick="start"
+        />
         <!--<io.saeid.fabloading.LoadingView
     android:id="@+id/loading_view"
     android:layout_width="wrap_content"
