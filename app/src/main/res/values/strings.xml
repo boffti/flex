@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Flex</string>
-    <string name="box_hint">Speak</string>
+    <string name="box_hint">Type here to speak.</string>
+    <string name="speaking">Made by Aneesh Melkot</string>
+    <string name="game_title">FLEX</string>
+    <string name="creator_name">Let your voice be heard.</string>
 </resources>

@@ -4,13 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    android:background="#151515"
+    tools:context="com.nieit.project.flex.MainActivity">
+
+    <!--android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    android:orientation="vertical"
-    android:background="#4644aa"
-    tools:context="com.nieit.project.flex.MainActivity">
+    android:paddingTop="@dimen/activity_vertical_margin"-->
 
 
 
@@ -21,8 +22,11 @@
         android:layout_marginLeft="4dp"
         android:layout_marginRight="4dp"
         android:layout_marginTop="20dp"
-        app:mtf_image="@drawable/ic_volume_up_24dp"
-        >
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        app:mtf_openKeyboardOnFocus="true"
+        app:mtf_image="@drawable/ic_volume_up_black_24dp">
 
         <EditText
             android:layout_width="match_parent"
@@ -33,33 +37,101 @@
             android:textSize="15sp"
             app:mtf_openKeyboardOnFocus="true"
             app:mtf_labelColor="@android:color/holo_red_dark"
-            app:mtf_cardColor="@color/cardview_dark_background"/>
+            app:mtf_cardColor="@color/cardview_dark_background"
+            />
 
     </com.github.florent37.materialtextfield.MaterialTextField>
 
-    <io.saeid.fabloading.LoadingView
+    <!--<com.github.jorgecastilloprz.FABProgressCircle
+        android:id="@+id/fabProgressCircle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true">-->
+    <!--<io.saeid.fabloading.LoadingView
         android:id="@+id/loading_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_weight="2"
-        android:scaleX="2.5"
-        android:scaleY="2.5"
-        android:padding="10dp"
-        app:mfl_onclickLoading="false"
-        android:layout_centerVertical="true"
+        android:scaleX="1.2"
+        android:scaleY="1.2"
+        app:mfl_onclickLoading="true"
         android:layout_centerHorizontal="true"
-        app:mfl_duration="800"
-        app:mfl_repeat="100"
-        android:onClick="start"
-        />
-        <!--<io.saeid.fabloading.LoadingView
-    android:id="@+id/loading_view"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:scaleX="1.5" //(optional)
-    android:scaleY="1.5" // (optional)
-    app:mfl_onclickLoading="true" //(optional)
-    app:mfl_duration="200" //(optional)
-    app:mfl_repeat="4" //(optional)
-    /> -->
+        android:layout_alignParentBottom="true"
+        android:layout_margin="28dp"
+        app:mfl_duration="700"
+        app:mfl_repeat="10"
+        android:onClick="start" />-->
+
+    <!--</com.github.jorgecastilloprz.FABProgressCircle>-->
+
+    <com.truizlop.fabreveallayout.FABRevealLayout
+        android:id="@+id/fab_reveal_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/fab_reveal_height"
+        android:layout_alignParentBottom="true"
+        >
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:backgroundTint="@color/fab"
+            android:src="@drawable/ic_volume_up_24dp"
+            android:elevation="10dp"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_centerInParent="true">
+
+                <TextView
+                    android:id="@+id/game_title_text"
+                    android:text="@string/game_title"
+                    style="@style/GameTitleStyle" />
+
+                <TextView
+                    android:id="@+id/creator_name_text"
+                    android:text="@string/creator_name"
+                    style="@style/GameCreatorStyle" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <com.wang.avi.AVLoadingIndicatorView
+                android:id="@+id/avloadingIndicatorView"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:visibility="visible"
+                app:indicator="LineScalePulseOut"
+                app:indicator_color="@color/white"
+                android:layout_centerInParent="true"/>
+
+            <TextView
+                android:id="@+id/myName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/speaking"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                />
+
+
+        </RelativeLayout>
+
+    </com.truizlop.fabreveallayout.FABRevealLayout>
+
 </RelativeLayout>
